@@ -1,0 +1,34 @@
+{
+  "dependencies": {
+    "dotenv": "^16.4.4",
+    "inquirer": "^9.2.14",
+    "mysql2": "^3.9.1",
+    "sequelize": "^6.37.1"
+  },
+  "name": "discover_cms",
+  "description": "A command-line application that manages a company's employee database, using Node.js, Inquirer, and MySQL",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hokage-216/discover_cms.git"
+  },
+  "keywords": [
+    "cms",
+    "cli",
+    "database",
+    "node.js",
+    "inquirer",
+    "mysql",
+    "express.js"
+  ],
+  "author": "LeVente Berry Jr.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hokage-216/discover_cms/issues"
+  },
+  "homepage": "https://github.com/hokage-216/discover_cms#readme"
+}
