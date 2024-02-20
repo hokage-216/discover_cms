@@ -1,40 +1,38 @@
-const Department = require('./Department');
-const Manager = require('./Manager');
-const Employees = require('./Employees');
-const Role = require('./Role');
+import { Department } from '../models/Department.js';
+import { Employees } from '../models/Employees.js';
+import { Role } from '../models/Role.js';
 
+// A Department has many Employees
 Department.hasMany(Employees, {
     foreignKey: 'department_id',
-    onDelete: 'CASCADE'
 });
 
 // An Employee belongs to one Department
 Employees.belongsTo(Department, {
     foreignKey: 'department_id',
-    onDelete: 'CASCADE'
-});
-
-// An Employee has one Role
-Employees.hasOne(Role, {
-    foreignKey: 'role_id',
-    onDelete: 'CASCADE'
 });
 
 // An Employee has one Manager
-Employees.hasOne(Manager, {
+Employees.belongsTo(Employees, {
+    as: 'Manager',
     foreignKey: 'manager_id',
-    onDelete: 'CASCADE'
 });
 
-// A Manager belongs to many Employees
-Manager.belongsToMany(Employees, {
-    foreignKey: 'manager_id'
-})
-
-// A Role belongs to many Employees
-Role.belongsToMany(Employees, {
-    foreignKey: 'role_id'
+// A Manager has many Directs (Employees)
+Employees.hasMany(Employees, {
+    as: 'Directs',
+    foreignKey: 'manager_id',
 });
 
+// A Role has many Employees
+Role.hasMany(Employees, {
+    foreignKey: 'role_id',
+});
 
-module.exports = { Department, Employees, Role, Manager };
+// An Employee belongs to one Role
+Employees.belongsTo(Role, {
+    foreignKey: 'role_id',
+});
+
+export { Department, Employees, Role };
+

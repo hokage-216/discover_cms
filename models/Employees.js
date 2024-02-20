@@ -1,5 +1,5 @@
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connect');
+import { Model, DataTypes } from 'sequelize';
+import { sequelize } from '../config/connect.js';
 
 class Employees extends Model {}
 
@@ -10,6 +10,7 @@ Employees.init(
             allowNull: false,
             primaryKey: true,
             autoIncrement: true,
+            unique: true
         },
         first_name: {
             type: DataTypes.STRING,
@@ -33,8 +34,6 @@ Employees.init(
                 model: 'department',
                 key: 'id',
             },
-            onUpdate: 'CASCADE',
-            onDelete: 'SET NULL', 
         },
         role_id: {
             type: DataTypes.INTEGER,
@@ -43,8 +42,14 @@ Employees.init(
                 model: 'role',
                 key: 'id',
             },
-            onUpdate: 'CASCADE',
-            onDelete: 'SET NULL',
+        },
+        manager_id: {
+            type: DataTypes.INTEGER,
+            allowNull: true,
+            references: {
+                model: 'employees',
+                key: 'id',
+            },
         },
     },
     {
@@ -56,4 +61,4 @@ Employees.init(
     }
 );
 
-module.exports = Employees;
+export { Employees };

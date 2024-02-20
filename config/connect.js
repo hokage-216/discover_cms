@@ -1,7 +1,8 @@
-const Sequelize = require('sequelize');
+import { Sequelize } from "sequelize";
+import 'dotenv/config'
 
 const URI = process.env.MYSQLURI
 
 const sequelize = new Sequelize(URI);
 
-module.exports = sequelize;
+export {sequelize};

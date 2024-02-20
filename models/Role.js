@@ -1,5 +1,5 @@
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connect');
+import { Model, DataTypes } from 'sequelize';
+import { sequelize } from '../config/connect.js';
 
 class Role extends Model {}
 
@@ -10,6 +10,7 @@ Role.init(
             allowNull: false,
             primaryKey: true,
             autoIncrement: true,
+            unique: true
         },
         title: {
             type: DataTypes.STRING,
@@ -29,8 +30,6 @@ Role.init(
                 model: 'department',
                 key: 'id',
             },
-            onUpdate: 'CASCADE',
-            onDelete: 'SET NULL', 
         },
     },
     {
@@ -42,4 +41,4 @@ Role.init(
     }
 );
 
-module.exports = Role;
+export { Role };

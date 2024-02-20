@@ -1,7 +1,7 @@
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
+import { Sequelize, DataTypes } from 'sequelize';
+import { sequelize } from '../config/connect.js';
 
-class Department extends Model {}
+class Department extends Sequelize.Model {}
 
 Department.init(
     {
@@ -9,15 +9,17 @@ Department.init(
             type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
-            autoIncrement: true
+            autoIncrement: true,
+            unique: true
         },
         name: {
             type: DataTypes.STRING,
             allowNull: false,
+            unique: true,
             validate: {
                 len: [0, 30],
-                notEmpty: true
-            }
+                notEmpty: true,
+            },
         },
     },
     {
@@ -25,8 +27,8 @@ Department.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'department'
+        modelName: 'department',
     }
 );
 
-module.exports = Department;
+export { Department };

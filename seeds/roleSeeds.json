@@ -1,1 +1,32 @@
-[]
+[
+    {
+        "title": "Software Developer Manager",
+        "salary": 150000.00,
+        "department_id": 3
+    },
+    {
+        "title": "Sales Manager",
+        "salary": 100000.00,
+        "department_id": 4
+    },
+    {
+        "title": "Digital Marketing Manager",
+        "salary": 85000.00,
+        "department_id": 7
+    },
+    {
+        "title": "Software Developer",
+        "salary": 100000.00,
+        "department_id": 3
+    },
+    {
+        "title": "Sales Representative",
+        "salary": 60000.00,
+        "department_id": 4
+    },
+    {
+        "title": "Marketing Specialist",
+        "salary": 70000.00,
+        "department_id": 7
+    }
+]
