@@ -5,4 +5,4 @@ const URI = process.env.MYSQLURI
 
 const sequelize = new Sequelize(URI);
 
-export {sequelize};
+export default sequelize;

@@ -7,6 +7,11 @@ Department.hasMany(Employees, {
     foreignKey: 'department_id',
 });
 
+// A Role has many Employees
+Role.hasMany(Employees, {
+    foreignKey: 'role_id',
+});
+
 // An Employee belongs to one Department
 Employees.belongsTo(Department, {
     foreignKey: 'department_id',
@@ -22,11 +27,6 @@ Employees.belongsTo(Employees, {
 Employees.hasMany(Employees, {
     as: 'Directs',
     foreignKey: 'manager_id',
-});
-
-// A Role has many Employees
-Role.hasMany(Employees, {
-    foreignKey: 'role_id',
 });
 
 // An Employee belongs to one Role

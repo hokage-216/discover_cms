@@ -1,5 +1,5 @@
 import { Model, DataTypes } from 'sequelize';
-import { sequelize } from '../config/connect.js';
+import sequelize from '../config/connect.js';
 
 class Role extends Model {}
 
@@ -41,4 +41,4 @@ Role.init(
     }
 );
 
-export { Role };
+export {Role};

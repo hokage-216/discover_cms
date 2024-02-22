@@ -1,5 +1,5 @@
 import { Sequelize, DataTypes } from 'sequelize';
-import { sequelize } from '../config/connect.js';
+import sequelize from '../config/connect.js';
 
 class Department extends Sequelize.Model {}
 
@@ -31,4 +31,4 @@ Department.init(
     }
 );
 
-export { Department };
+export {Department};
