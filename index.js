@@ -5,10 +5,10 @@ import 'dotenv/config'
 const logo = ">>=====================================================<<\r\n||                                                     ||\r\n||                                                     ||\r\n||                                                     ||\r\n||    _____                 _                          ||\r\n||   | ____|_ __ ___  _ __ | | ___  _   _  ___  ___    ||\r\n||   |  _| | \'_ ` _ \\| \'_ \\| |\/ _ \\| | | |\/ _ \\\/ _ \\   ||\r\n||   | |___| | | | | | |_) | | (_) | |_| |  __\/  __\/   ||\r\n||   |_____|_| |_| |_| .__\/|_|\\___\/ \\__, |\\___|\\___|   ||\r\n||   |  \\\/  | __ _ _ |_|  __ _  __ _|___\/ _ __  | |    ||\r\n||   | |\\\/| |\/ _` | \'_ \\ \/ _` |\/ _` |\/ _ \\ \'__| | |    ||\r\n||   | |  | | (_| | | | | (_| | (_| |  __\/ |    |_|    ||\r\n||   |_|  |_|\\__,_|_| |_|\\__,_|\\__, |\\___|_|    (_)    ||\r\n||                             |___\/                   ||\r\n||                                                     ||\r\n||                                                     ||\r\n||                                                     ||\r\n>>=====================================================<<"
 
 const connection = mysql.createPool({
-    host: '127.0.0.1',
-    user: 'root',
+    host: process.env.MYSQLHOST,
+    user: process.env.MYSQLUSER,
     password: process.env.MYSQLPASS,
-    database: 'employees_db',
+    database: process.env.MYSQLDB,
   });
 
   async function viewAllDepartments() {
