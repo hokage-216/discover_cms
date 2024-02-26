@@ -37,7 +37,7 @@ Role.init(
         modelName: 'role',
         freezeTableName: true,
         underscored: true,
-        timestamps: true,
+        timestamps: false,
     }
 );
 

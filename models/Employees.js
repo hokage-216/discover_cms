@@ -57,7 +57,7 @@ Employees.init(
         modelName: 'employees',
         freezeTableName: true,
         underscored: true,
-        timestamps: true,
+        timestamps: false,
     }
 );
 

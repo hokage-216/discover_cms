@@ -1,6 +1,6 @@
 import sequelize from './connect.js';
 
-async function syncTables() {
+export default async function syncTables() {
     try {
         await sequelize.sync({ force: true });
         console.log("All models were synchronized successfully.");
@@ -8,5 +8,3 @@ async function syncTables() {
         console.error('Failed to synchronize models:', error);
     }
 }
-
-export default syncTables;
